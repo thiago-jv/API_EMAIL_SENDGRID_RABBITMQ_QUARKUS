@@ -1,4 +1,4 @@
-package domain.service;
+package message;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,11 +14,11 @@ import org.eclipse.microprofile.reactive.messaging.Message;
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class PedidoConsumer {
+public class RabbitMQConsumer {
 
     private final ReactiveMailer mailer;
 
-    public PedidoConsumer(ReactiveMailer mailer) {
+    public RabbitMQConsumer(ReactiveMailer mailer) {
         this.mailer = mailer;
     }
 
