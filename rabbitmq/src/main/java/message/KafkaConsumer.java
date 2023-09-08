@@ -17,7 +17,7 @@ public class KafkaConsumer {
 
     // caso ocorra algum problema no consumo, o kafka irá tentar contornar
     // delay = 10 tempo de 10s e tente novamente por maxRetries = 5 vezes
-    @Incoming("pedido")
+    @Incoming("pedido-in")
     @Retry(delay = 10, maxRetries = 5, delayUnit = ChronoUnit.SECONDS)
     public CompletionStage<Void> consumerPedido(Message<String> message) {
         LOG.info("-- Recebendo Novo Pedido via topico KAFKA--" + message.getPayload());
